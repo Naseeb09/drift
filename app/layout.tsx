@@ -1,29 +1,12 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
-import localFont from "next/font/local"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-})
-
-const editorial = localFont({
-  src: [
-    {
-      path: "../public/fonts/PPEditorialNew-Regular.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/PPEditorialNew-Italic.woff2",
-      weight: "400",
-      style: "italic",
-    },
-  ],
-  variable: "--font-editorial",
 })
 
 export const metadata: Metadata = {
@@ -46,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${editorial.variable} font-sans`}>
+      <body className={`${inter.variable} font-sans`}>
         {children}
         <Analytics />
       </body>
